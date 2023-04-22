@@ -1,3 +1,4 @@
+--1.
 db.language.aggregate([
     {
         $lookup:{
@@ -18,3 +19,25 @@ db.language.aggregate([
     }
 ]
 ).sort({count:-1})
+
+--2 
+db.actor.aggregate([
+    {
+        $lookup:{
+            from:"film_actor",
+            localField:"_id",
+            foreignField:"actor_id",
+            as:"film_actor"
+        }
+    },
+    {
+        $unwind:"$film_actor"    
+    },
+    {
+        $group:{
+            first_name:"$first_name",
+            last_name:"$last_name",
+            count:{$sum:1}
+        }
+    }
+])
