@@ -1,0 +1,20 @@
+db.language.aggregate([
+    {
+        $lookup:{
+            from:"film",
+            localField:"_id",
+            foreignField:"language_id",
+            as:"film"
+        }
+    },
+    {
+        $unwind:"$film"
+    },
+    {
+        $group:{
+            _id:"$name",
+            count:{$sum:1}
+        }
+    }
+]
+).sort({count:-1})
