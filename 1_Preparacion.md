@@ -72,7 +72,7 @@ mysql> use sakila;
 
 Este comando mostrará todas las bases de datos disponibles en MySQL y luego establecerá la base de datos Sakila como la base de datos actual.
 
-Tomese 15 minutos para revisar la estructura de datos de sakila, puede encontrar la documentación en: https://dev.mysql.com/doc/sakila/en/sakila-structure.html
+Tomese 15 minutos para revisar la estructura de datos de sakila, puede encontrar la documentación en:
 
 ### Instalación de MongoDB
 
