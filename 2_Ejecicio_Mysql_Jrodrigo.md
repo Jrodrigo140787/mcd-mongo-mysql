@@ -113,7 +113,7 @@ Respuesta:
 ```sql
 -- Su respuesta aqui:
 
-SELECT ...
+select a.actor_id,a.first_name,a.last_name,count(1)film_count from actor a inner join film_actor f on a.actor_id = f.actor_id inner join film fi on f.film_id=fi.film_id inner join  film_category fc on  fi.film_id=fc.film_id inner join category ca on fc.category_id = ca.category_id  where ca.name ='Comedy' group by a.actor_id,a.first_name,a.last_name  order by 4 desc limit 10 ;
 
 ```
 
