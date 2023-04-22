@@ -142,6 +142,6 @@ Respuesta:
 ```sql
 -- Su respuesta aqui:
 
-SELECT ...
+select actor_id,first_name,last_name from actor  where actor_id not in(select Distinct a.actor_id from actor a inner join film_actor f on a.actor_id = f.actor_id inner join film fi on f.film_id=fi.film_id inner join  film_category fc on  fi.film_id=fc.film_id inner join category ca on fc.category_id = ca.category_id  where ca.name ='Comedy' ) ;
 
 ```
