@@ -59,7 +59,7 @@ Salida:
 
 Respuesta:
 ```sql
--- Su respuesta aqui:
+select l.language_id,l.name language,count(1)film_count  from language l left join film f on l.language_id=f.language_id group by l.language_id,l.name ;
 
 SELECT ...
 
