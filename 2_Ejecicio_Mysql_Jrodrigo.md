@@ -35,9 +35,8 @@ Salida:
 
 Respuesta:
 ```sql
+-- Su respuesta aqui:
 select c.city_id,c.city,count(1)Store_Count from city c inner join address a on c.city_id= a.city_id inner join store s on a.address_id =s.address_id group by c.city_id,c.city;
-
-SELECT ...
 
 ```
 
@@ -59,9 +58,8 @@ Salida:
 
 Respuesta:
 ```sql
+-- Su respuesta aqui:
 select l.language_id,l.name language,count(1)film_count  from language l left join film f on l.language_id=f.language_id group by l.language_id,l.name ;
-
-SELECT ...
 
 ```
 
@@ -87,7 +85,7 @@ Respuesta:
 ```sql
 -- Su respuesta aqui:
 
-SELECT ...
+select a.actor_id,a.first_name,a.last_name,count(1)film_count from actor a inner join film_actor f on a.actor_id = f.actor_id group by a.actor_id,a.first_name,a.last_name having count(1)>35 ;
 
 ```
 
